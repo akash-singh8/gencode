@@ -6,6 +6,7 @@ if docker ps -a --filter "name=lenx-java" --format '{{.Names}}' | grep -q "lenx-
 fi
 
 FILE_NAME=$1
+INPUT_ARG=$2
 
 docker run -d --name lenx-java openjdk sleep infinity
 
@@ -22,7 +23,7 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
-docker exec lenx-java java "home/${FILE_NAME}"
+docker exec lenx-java bash -c "echo ${INPUT_ARG} | java home/${FILE_NAME}"
 
 if [ $? -ne 0 ]; then
     echo "Failed to execute ${FILE_NAME} file"

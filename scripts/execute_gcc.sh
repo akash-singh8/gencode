@@ -6,6 +6,7 @@ if docker ps -a --filter "name=lenx-cpp" --format '{{.Names}}' | grep -q "lenx-c
 fi
 
 FILE_NAME=$1
+INPUT_ARG=$2
 
 docker run -d --name lenx-cpp gcc sleep infinity
 
@@ -30,7 +31,7 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
-docker exec lenx-cpp home/cpp_exe
+docker exec lenx-cpp bash -c "echo ${INPUT_ARG} | home/cpp_exe"
 
 if [ $? -ne 0 ]; then
     echo "Failed to execute the compiled binary"

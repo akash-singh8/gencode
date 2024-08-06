@@ -1,0 +1,22 @@
+.editor {
+  height: calc(100% - 200px) !important;
+  overflow: auto !important;
+  position: relative;
+
+  & > div {
+    background-color: var(--mid-black);
+    font-size: 1rem;
+    position: absolute !important;
+    height: 100%;
+    width: 100%;
+
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--border);
+      border-radius: 3px;
+    }
+  }
+}

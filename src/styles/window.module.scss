@@ -1,0 +1,27 @@
+.window {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  border-radius: 18px;
+  background-color: var(--midnight);
+  width: 70%;
+  height: 80%;
+  position: absolute;
+  left: 15%;
+  top: 10%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.container {
+  display: flex;
+  flex: 1;
+}
+
+.rightSection {
+  background-color: var(--mid-black);
+  flex: 1;
+  border-bottom-right-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
